@@ -1,0 +1,30 @@
+<table class="table table-sm">
+    <thead>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            {% for ch1 in s2 %}
+                <th>{{ ch1 }}</th>
+            {% endfor %}
+        </tr>
+        <tr>
+            <th></th>
+            <th></th>
+            {% for j in range(s2|length + 1) %}
+                <th>{{ j }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in range(s1|length + 1) %}
+            <tr>
+                <th scope="row">{{ s1[i-1] if i != 0 }}</th>
+                <th scope="row">{{ i }}</th>
+                {% for mm in matrix[i] %}
+                    <td>{{ mm[0] }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
